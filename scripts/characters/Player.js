@@ -14,7 +14,7 @@ class Player{
 
         this.dimensions = {
             width: 50,
-            height: 50
+            height: 50,
         }
         
         this.sides = {
@@ -30,8 +30,11 @@ class Player{
 
         update(){
 
+            //this.dimensions.height = 50;
+
             this.coordinates.x += this.velocity.x;
             this.coordinates.y += this.velocity.y;
+
             this.sides.bottom = this.coordinates.y + this.dimensions.height;
 
             if(this.sides.bottom + this.velocity.y < canvas.height){

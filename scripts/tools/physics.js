@@ -10,6 +10,10 @@ function moveLeft(character, velocity = -5){
     
 }
 
+function duck(character, height = 25){
 
+    character.dimensions.height = height;
+    console.log(character.dimensions.height)
 
+}
 

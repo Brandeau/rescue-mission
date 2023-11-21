@@ -8,8 +8,11 @@ function  buttonsPressed(event){
         case 'a': keys.a.pressed = true;
             break;  
         case 'd': keys.d.pressed = true;
-            break;  
-            
+            break;
+        case 's': keys.s.pressed = true;
+
+        
+            break;
     }
 }
 
@@ -19,6 +22,13 @@ function buttonsUnpressed(event){
             break;
         case 'd': keys.d.pressed = false;
             break;
+        case 's': keys.s.pressed = false;
+            player.coordinates.y = 525
+            player.dimensions.height = 50;
+            console.log(player.dimensions.height)
+
+                    
+            break;    
        
     }
 }
