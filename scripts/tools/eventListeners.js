@@ -1,8 +1,8 @@
 function  buttonsPressed(event){
     switch(event.key){
         case 'w': 
-            if(player.sides.bottom === canvas.height){
-                player.velocity.y = -15;
+            if(player.velocity.y === 0){
+                player.velocity.y = -20;
             }
            break;
         case 'a': keys.a.pressed = true;
@@ -25,9 +25,6 @@ function buttonsUnpressed(event){
         case 's': keys.s.pressed = false;
             player.coordinates.y = 525
             player.dimensions.height = 50;
-            console.log(player.dimensions.height)
-
-                    
             break;    
        
     }

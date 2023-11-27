@@ -5,7 +5,9 @@ const c = canvas.getContext('2d');
 canvas.width = 1024;
 canvas.height = 576;
 
-const player = new Player();
+const collisionBlocks = collisionsLevel1.createObjects();
+
+const player = new Player({collisionBlocks});
 
 const keys = {
     w: {
@@ -26,6 +28,8 @@ function animate(){
     window.requestAnimationFrame(animate);
     c.fillStyle = 'white';
     c.fillRect(0, 0, canvas.width, canvas.height);
+
+    collisionBlocks.forEach(collisionBlock => collisionBlock.draw())
 
     player.velocity.x = 0;
 
