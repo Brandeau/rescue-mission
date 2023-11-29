@@ -33,8 +33,13 @@ class Player{
         update(){
 
             this.coordinates.x += this.velocity.x;
+            this.checkForHorizontalCollisions();
+            this.applyGravity();
+            this.checkForVerticalCollisions();
+        
+ }
 
-            //check for horizontal collisions
+        checkForHorizontalCollisions(){
             for(let i = 0; i < this.collisionBlocks.length; i++){
                 const collisionBlock = this.collisionBlocks[i]; 
 
@@ -55,12 +60,14 @@ class Player{
                         }
                     }
             }
-            //apply gravity
+        }
+
+        applyGravity(){
             this.velocity.y += this.gravity;
             this.coordinates.y += this.velocity.y;
-            //this.sides.bottom = this.coordinates.y + this.dimensions.height;
+        }
 
-            //check for vertical collition
+        checkForVerticalCollisions(){
             for(let i = 0; i < this.collisionBlocks.length; i++){
                 const collisionBlock = this.collisionBlocks[i]; 
 
@@ -82,11 +89,7 @@ class Player{
                         }
                     }
             }
-
-
-            //if(this.sides.bottom + this.velocity.y < canvas.height){
-            //} else this.velocity.y = 0;
-        
- }
+        }
 
 }
+

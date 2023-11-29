@@ -23,7 +23,7 @@ function buttonsUnpressed(event){
         case 'd': keys.d.pressed = false;
             break;
         case 's': keys.s.pressed = false;
-            player.coordinates.y = 525
+            player.coordinates.y -= 50;
             player.dimensions.height = 50;
             break;    
        
