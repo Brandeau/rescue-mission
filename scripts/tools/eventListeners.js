@@ -1,9 +1,7 @@
 function  buttonsPressed(event){
     switch(event.key){
-        case 'w': 
-            if(player.velocity.y === 0){
-                player.velocity.y = -20;
-            }
+        case 'w': keys.w.pressed = true;
+        
            break;
         case 'a': keys.a.pressed = true;
             break;  
@@ -26,7 +24,8 @@ function buttonsUnpressed(event){
             player.coordinates.y -= 50;
             player.dimensions.height = 50;
             break;    
-       
+       case 'w': keys.w.pressed = false;
+       break;
     }
 }
 

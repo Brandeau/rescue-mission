@@ -36,6 +36,10 @@ function animate(){
     if(keys.d.pressed) moveRight(player);
     else if (keys.a.pressed) moveLeft(player);
     else if (keys.s.pressed) duck(player);
+    else if (keys.w.pressed) {
+        jump(player);
+        keys.w.pressed = false;
+    }
 
     player.draw();
     player.update();
